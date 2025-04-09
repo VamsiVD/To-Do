@@ -1,0 +1,131 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, Arial;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #153677, #4e085f );
+  padding: 10px;
+}
+
+.todo-box{
+  width: 100%;
+  max-width: 540px;
+  background-color: white;
+  margin: 400px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+
+}
+
+.todo-box h2{
+  color: #002765;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+
+.todo-box img{
+  position: relative;
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+  margin-top: -5px;
+}
+
+.task-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* optional spacing */
+  position: relative; /* allows relative layout if needed */
+}
+
+.task-bar{
+  border-width: 0px ;
+  position: relative;
+  display: flex;
+  flex: 1;
+  white-space: nowrap;
+  padding: 11px;
+  background-color: rgb(243, 243, 243);
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.task-bar:focus {
+  outline: solid 1.5px rgb(255, 95, 27);
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px rgb(255, 95, 27);
+}
+
+.add-button{
+  top: -1;
+  right: 0;
+  border-width: 0px;
+  position: absolute;
+  padding: 10.5px 35px;
+  background-color: rgb(255, 95, 27);
+  color: white;
+  font-size: 15px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+
+
+ul li{
+
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before{
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(icons/checkbox-blank-circle-line.svg);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 8px;
+  left: 8px;
+}
+
+ul li.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before{
+  background-image: url(icons/checkbox-circle-fill.svg);
+}
+
+
+ul li span{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+ul li span:hover{
+  background: #edeef0;;
+}
