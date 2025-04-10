@@ -16,8 +16,13 @@ function addTask(){
     li.innerHTML = inputBox.value;
     listContainer.appendChild(li);
     let span = document.createElement("span")
+    span.className = "delete";
     span.innerHTML = "\u00d7";
     li.appendChild(span);
+    let span2 = document.createElement("span");
+    span2.className = "edit";
+    span2.innerHTML = "✎"
+    li.appendChild(span2);
   }
   inputBox.value = '';
   saveData();
@@ -28,8 +33,16 @@ listContainer.addEventListener("click", function(e){
     e.target.classList.toggle("checked");
     saveData();
   }
-  else if(e.target.tagName === "SPAN"){
+  else if(e.target.className === "delete"){
     e.target.parentElement.remove();
+    saveData();
+  }
+  else if(e.target.className === "edit"){
+    let li = e.target.parentElement;
+    let taskText = li.childNodes[0].nodeValue.trim();
+    inputBox.value = taskText;
+    li.remove();
+    inputBox.focus();
     saveData();
   }
 }, false);
